@@ -4,6 +4,7 @@ const path = require('path');
 const fs = require('fs');
 
 
+
 module.exports = {
 async index(req, res) {
   const posts = await Post.find().sort('-createdAt');

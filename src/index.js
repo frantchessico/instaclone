@@ -40,6 +40,11 @@ app.use('/files', express.static(path.resolve(__dirname, '..', 'uploads', 'resiz
 
 app.use(routes)
 
+// const socketIo = io(server)
+// socketIo.on('connection', (socket) => {
+//   console.log('Client connected');
+//   socket.on('disconnect', () => console.log('Client disconnected'));
+// });
 
 server.listen(port, () => {
     console.log(`Server on port ${port}`);
