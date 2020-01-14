@@ -16,8 +16,8 @@ const io = require('socket.io')(server)
 
 mongoose.connect(
    
-    //  'mongodb+srv://savanapoint:Luisa@jaime1996@cluster0-jrhmu.mongodb.net/instaclone?retryWrites=true&w=majority',
-    'mongodb://localhost/instaclone',
+     'mongodb+srv://savanapoint:Luisa@jaime1996@cluster0-jrhmu.mongodb.net/instaclone?retryWrites=true&w=majority',
+    // 'mongodb://localhost/instaclone',
      {
          useNewUrlParser: true,
          useUnifiedTopology: true
