@@ -41,6 +41,10 @@ app.use('/files', express.static(path.resolve(__dirname, '..', 'uploads', 'resiz
 app.use(routes)
 
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 6d520d0c5d005f4b6e8ad57157d5a7c848c93f31
 server.listen(port, () => {
     console.log(`Server on port ${port}`);
 });
