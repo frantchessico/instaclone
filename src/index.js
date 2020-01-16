@@ -26,10 +26,10 @@ mongoose.connect(
     console.log('on')
 }).catch(err => console.log(err));
 
-app.use((req, res, next) => {
-    req.io = io;
-    next();
-});
+// app.use((req, res, next) => {
+//     req.io = io;
+//     next();
+// });
 //app.use(cors());
 
 const port = process.env.PORT || 4200;
