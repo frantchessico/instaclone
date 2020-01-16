@@ -12,12 +12,12 @@ const app = express();
 
 const server = require('http').Server(app);
 
-const io = require('socket.io');
+const io = require('socket.io')(server);
 
 mongoose.connect(
    
-     'mongodb+srv://savanapoint:Luisa@jaime1996@cluster0-jrhmu.mongodb.net/instaclone?retryWrites=true&w=majority',
-    // 'mongodb://localhost/instaclone',
+    //  'mongodb+srv://savanapoint:Luisa@jaime1996@cluster0-jrhmu.mongodb.net/instaclone?retryWrites=true&w=majority',
+    'mongodb://localhost/instaclone',
      {
          useNewUrlParser: true,
          useUnifiedTopology: true
@@ -41,8 +41,7 @@ app.use('/files', express.static(path.resolve(__dirname, '..', 'uploads', 'resiz
 app.use(routes)
 
 
-
-app.listen(port, () => {
+server.listen(port, () => {
     console.log(`Server on port ${port}`);
 });
 

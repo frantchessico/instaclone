@@ -20,7 +20,7 @@ async store(req, res) {
    const fileName = `${name}.jpg`
     await sharp(req.file.path)
     .resize(500, 600)
-    .jpeg({ quality: 80 })
+    .jpeg({ quality: 100 })
     .toFile(
       path.resolve(req.file.destination, 'resized', fileName)
     );
