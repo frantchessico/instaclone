@@ -10,9 +10,9 @@ const cors = require('cors');
 
 const app = express();
 
-//const server = require('http').Server(app);
+// const server = require('http').Server(app);
 
-//const io = require('socket.io')(server);
+// const io = require('socket.io')(server);
 
 mongoose.connect(
    
@@ -30,7 +30,7 @@ mongoose.connect(
 //     req.io = io;
 //     next();
 // });
-//app.use(cors());
+app.use(cors());
 
 const port = process.env.PORT || 4200;
 
@@ -42,11 +42,7 @@ app.use(routes)
 
 
 
-// server.listen(port, () => {
-//     console.log(`Server on port ${port}`);
-// });
-
-
 app.listen(port, () => {
     console.log(`Server on port ${port}`);
 });
+
