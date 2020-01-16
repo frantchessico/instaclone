@@ -10,9 +10,9 @@ const cors = require('cors');
 
 const app = express();
 
-// const server = require('http').Server(app);
+const server = require('http').Server(app);
 
-// const io = require('socket.io')(server);
+const io = require('socket.io')(server);
 
 mongoose.connect(
    
@@ -26,10 +26,10 @@ mongoose.connect(
     console.log('on')
 }).catch(err => console.log(err));
 
-// app.use((req, res, next) => {
-//     req.io = io;
-//     next();
-// });
+app.use((req, res, next) => {
+    req.io = io;
+    next();
+});
 app.use(cors());
 
 const port = process.env.PORT || 4200;
@@ -41,8 +41,7 @@ app.use('/files', express.static(path.resolve(__dirname, '..', 'uploads', 'resiz
 app.use(routes)
 
 
-
-app.listen(port, () => {
+server.listen(port, () => {
     console.log(`Server on port ${port}`);
 });
 
