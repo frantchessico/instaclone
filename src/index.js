@@ -30,7 +30,7 @@ app.use((req, res, next) => {
     req.io = io;
     next();
 });
-app.use(cors());
+//app.use(cors());
 
 const port = process.env.PORT || 4200;
 
